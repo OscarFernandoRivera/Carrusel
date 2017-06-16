@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<html>
+	<meta charset="utf-8">
+
+	<head>
+		<meta name="author:" content="Oscar Fernando Rivera">
+		<meta name="description" content="Carrusel de imágenes, al dar clic en el hipervínculo se cargan las siguientes imágenes"
+		<title>Carrusel</title>
+	</head>
+
+
+ 	<body color ="blue">
+ 		<h2 align="center">Imagenes de Galaxias</h2>
+ 		
+
+		<table width="60%" border="2" align="center">
+			<tr>
+
+			<td width="20%" align="center" height="200">
+				<font color="#0033CC">
+				<b> <a href="javascript:recorrer(-1)">Anterior</a> </b>
+				</font>
+			</td>
+
+			<td align="center" width="60%" height="300">
+			<img id="galaxia" src="carruselImag/galac1.jpg" height="250">
+			</td>
+
+			<td width="20%" align="center" height="200">
+				<font color="#0033CC">
+				<b> <a href="javascript:recorrer(1)">Siguiente</a> </b>
+				</font>
+			</td>
+
+			</tr>
+		</table>
+
+</body>
+<script type="text/javascript">
+
+	var vectorImagenes = new Array ('galac1.jpg', 'galac2.jpg', 'galac3.jpg' , 'galac4.jpg','galac5.jpg','galac6.jpg','galac7.jpg','galac8.jpg','galac9.jpg', 'galac10.jpg');
+	var contador = 0;
+	
+	function recorrer(a)
+	{
+
+    var tamaño = vectorImagenes.length;
+    //////////////////////////////////////alert(tamaño);//////////////////envía una alerta con el tamaño del vector
+	contador+= a;
+	if(contador<0){
+		contador=(vectorImagenes.length-1);
+        		document.images.galaxia.src = "carruselImag/"+vectorImagenes[contador];
+	}else if(contador>=vectorImagenes.length){
+		contador= 0;
+				document.images.galaxia.src = "carruselImag/"+vectorImagenes[contador];
+
+	} else{
+		        document.images.galaxia.src = "carruselImag/"+vectorImagenes[contador];		
+	}
+
+
+
+	}
+			
+</script>
+</html>
